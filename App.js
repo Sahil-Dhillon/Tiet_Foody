@@ -1,11 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import AppStack from './AppStack';
 import 'react-native-gesture-handler';
-
+import { Provider } from 'react-redux';
+import store from './store/store';
+const THEME_COLOR = '#000022'
+const AppStatusBar = ({ backgroundColor, ...props }) => {
+  return (
+    <View style={[styles.statusbar, backgroundColor]}>
+      <StatusBar backgroundColor={backgroundColor} {...props} />
+    </View>
+  );
+};
 export default function App() {
   return (
-    <AppStack />
+    <Provider store={store}>
+      <AppStatusBar backgroundColor={THEME_COLOR} barStyle="light-content" />
+      <AppStack />
+    </Provider>
   );
 }
 
@@ -16,4 +28,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  statusbar: {
+    // height: BAR_HEIGHT,
+    backgroundColor: THEME_COLOR,
+    color: '#fff'
+  }
 });

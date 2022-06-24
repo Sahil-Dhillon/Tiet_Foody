@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { StyleSheet, TextInput, View, Button, Text } from 'react-native'
-// import { signin, signup } from '../store/actions/userActions'
-import { ToastAndroid } from 'react-native'
+import { signin, signup } from '../store/actions/userActions'
+// import { ToastAndroid } from 'react-native'
 
 export default function Login() {
     const [fname, setFname] = useState('')
@@ -11,10 +11,10 @@ export default function Login() {
     const [cpassword, setCpassword] = useState('')
     const [validateError, setValidateError] = useState()
     const [create, setCreate] = useState(false)
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
-    // const userSignin = useSelector((state) => state.userSignin)
-    // const userSignup = useSelector((state) => state.userSignup)
+    const userSignin = useSelector((state) => state.userSignin)
+    const userSignup = useSelector((state) => state.userSignup)
 
     useEffect(() => {
         if (password.length > 0 && password.length < 8) {
@@ -26,21 +26,21 @@ export default function Login() {
         }
     }, [password, cpassword])
     const signIn = () => {
-        // email, password ? dispatch(signin(email, password)) : alert('Enter all required fields.')
-        // var { userInfo, loading, error } = userSignin
-        // if (error) {
-        //     alert(error)
-        // }
+        email, password ? dispatch(signin(email, password)) : alert('Enter all required fields.')
+        var { userInfo, loading, error } = userSignin
+        if (error) {
+            alert(error)
+        }
     }
     const signUp = () => {
         if (validateError) {
             return
         } else {
-            // fname, email, password, cpassword ? dispatch(signup(fname, email, password)) : alert('Enter all required fields.')
-            // var { userInfo, loading, error } = userSignup
-            // if (error) {
-            //     alert(error)
-            // }
+            fname, email, password, cpassword ? dispatch(signup(fname, email, password)) : alert('Enter all required fields.')
+            var { userInfo, loading, error } = userSignup
+            if (error) {
+                alert(error)
+            }
         }
     }
 
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         padding: 20
     },
     heading: {
-        // color: '#fff',
+        color: '#fff',
         fontSize: 60,
         marginVertical: 30,
         // lineHeight: 50,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     signUpText: {
-        // color: '#ddd',
+        color: '#ddd',
         fontSize: 15,
         margin: 20
     }
