@@ -4,15 +4,12 @@ import { StyleSheet, Text, View, TouchableOpacity, Alert, ImageBackground, Image
 import { Button } from 'react-native'
 import { ScrollView } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-// import ServiceCard from '../components/home/serviceCard'
 import LoadingScreen from '../components/loading'
-// import { listServices } from '../store/actions/servicesAction'
 import { signout } from '../store/actions/userActions'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import shopData from '../data/shopData'
 import ShopCard from '../components/home/shopCard'
 export default function HomeScreen({ navigation }) {
-    // let userData = AsyncStorage.getItem('userInfo') ? AsyncStorage.getItem('userInfo').name : "Logged out"
     const dispatch = useDispatch()
     const userSignin = useSelector((state) => state.userSignin)
     const { userInfo } = userSignin
@@ -21,13 +18,6 @@ export default function HomeScreen({ navigation }) {
         alert('Logged out')
         dispatch(signout())
     }
-    // const dispatch = useDispatch()
-    // const serviceList = useSelector((state) => state.serviceList);
-    // const { loading, error, services } = serviceList
-    // useEffect(() => {
-    //     dispatch(listServices())
-    // }, [dispatch]);
-
     return (
         <View style={styles.container}>
             <View style={styles.bgContainer}>
@@ -43,7 +33,7 @@ export default function HomeScreen({ navigation }) {
                 style={styles.flatList}
                 data={shopData}
                 renderItem={({ item }) => <ShopCard {...item} />}
-                keyExtractor={item => item.id}
+                keyExtractor={item => item._id}
             />
 
         </View>

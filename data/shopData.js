@@ -6,6 +6,8 @@ export default data = [
         place: "Jaggi",
         open: true,
         rating: 3,
+        openHours: 7,
+        closeHours: 20,
         menu: [
             {
                 _id: 1,
@@ -40,6 +42,8 @@ export default data = [
         place: "Jaggi",
         open: true,
         rating: 4,
+        openHours: 8,
+        closeHours: 21,
         menu: [
             {
                 _id: 1,
@@ -80,6 +84,8 @@ export default data = [
         place: "Cos",
         open: true,
         rating: 5,
+        openHours: 11,
+        closeHours: 21,
         menu: [
             {
                 _id: 1,
@@ -114,6 +120,8 @@ export default data = [
         place: "Cos",
         open: true,
         rating: 5,
+        openHours: 11,
+        closeHours: 21,
         menu: [
             {
                 _id: 1,
@@ -148,6 +156,8 @@ export default data = [
         place: "Cos",
         open: true,
         rating: 5,
+        openHours: 11,
+        closeHours: 21,
         menu: [
             {
                 _id: 1,
@@ -182,6 +192,8 @@ export default data = [
         place: "Cos",
         open: true,
         rating: 5,
+        openHours: 11,
+        closeHours: 21,
         menu: [
             {
                 _id: 1,
@@ -216,6 +228,8 @@ export default data = [
         place: "Cos",
         open: true,
         rating: 5,
+        openHours: 11,
+        closeHours: 21,
         menu: [
             {
                 _id: 1,
