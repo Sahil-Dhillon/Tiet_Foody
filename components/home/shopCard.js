@@ -37,16 +37,15 @@ const ShopCard = ({ _id, name, open, menu, rating, openHours, closeHours }) => {
         <View style={styles.container}>
             <View style={styles.topBar}>
                 <Text style={styles.titleText}>{name}</Text>
-                <IconFa5 name='arrow-right' color='#0094c6' size={16} />
-            </View>
-            <View style={{ paddingHorizontal: 15, flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}>
-                <Text style={{ color: "#1d1d1d" }}>User Rating : {rating}/5</Text>
                 {
                     hour >= openHours && hour <= closeHours ?
                         <Text style={{ fontWeight: 'bold', color: 'green' }}>Open</Text> :
                         <Text style={{ fontWeight: 'bold', color: 'red' }}>Closed</Text>
 
                 }
+            </View>
+            <View style={{ paddingHorizontal: 15, flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}>
+                <Text style={{}}>User Rating : {rating}/5</Text>
             </View>
             <View style={styles.middleGrid}>
                 {
@@ -79,9 +78,13 @@ const styles = StyleSheet.create({
         maxWidth: '100%',
         margin: 10,
         alignItems: 'center',
+        borderWidth: 1,
+        borderColor: '#fff',
+        borderRadius: 20
     },
     titleText: {
         fontSize: 20,
+        // color: '#fff'
         // margin: 1
 
     },
@@ -91,7 +94,8 @@ const styles = StyleSheet.create({
         // left: 0,
         width: '100%',
         flexDirection: 'row',
-        backgroundColor: '#fff',
+        // backgroundColor: '#fff',
+        // color: '#fff',
         alignItems: 'center',
         justifyContent: 'space-between',
         borderTopLeftRadius: 20,
@@ -113,16 +117,7 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius: 20,
         borderBottomRightRadius: 20
     },
-    pills: {
-        margin: 8,
-        marginHorizontal: 10,
-        paddingHorizontal: 10,
-        paddingVertical: 2,
-        borderRadius: 20,
-        borderWidth: 1,
-        borderColor: '#ddd',
-        backgroundColor: '#fff'
-    },
+
     middleGrid: {
         marginHorizontal: 10,
         flexDirection: 'row',

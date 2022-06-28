@@ -9,6 +9,7 @@ import { signout } from '../store/actions/userActions'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import shopData from '../data/shopData'
 import ShopCard from '../components/home/shopCard'
+import Icon1 from 'react-native-vector-icons/MaterialIcons'
 export default function HomeScreen({ navigation }) {
     const dispatch = useDispatch()
     const userSignin = useSelector((state) => state.userSignin)
@@ -21,14 +22,22 @@ export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.bgContainer}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 15 }}>
+                    <Text style={{ fontSize: 28, fontWeight: '300' }}>Tiet Foody</Text>
+                    <Icon1 name='info' style={{ fontSize: 30 }} onPress={() => navigation.navigate('About Us')} />
+                </View>
                 <View style={styles.headerText}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Icon name='account-circle' color='#ddd' size={38} />
+                        <Icon name='account-circle' size={38} />
                         <Text style={styles.headerText}>Hi, {userInfo && userInfo.name}</Text>
                     </View>
-                    <Icon name='logout' onPress={logout} color='#ddd' size={25} />
+                    <View>
+                        <Icon name='logout' onPress={logout} size={25} style={{ textAlign: 'center' }} />
+                        <Text>Logout</Text>
+                    </View>
                 </View>
             </View>
+            {/* <Text style={{ fontSize: 20, padding: 10, marginHorizontal: 10, width: '90%', borderRadius: 20, color: '#fff', backgroundColor: 'orange' }}>Choose from Variety of Shops</Text> */}
             <FlatList
                 style={styles.flatList}
                 data={shopData}
@@ -43,23 +52,23 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#000022',
+        backgroundColor: '#eaffd3',
         // justifyContent: 'center',
         alignItems: 'center',
         padding: 10
     },
     bgContainer: {
         minWidth: '100%',
-        backgroundColor: '#000022',
-        minHeight: '20%',
-        padding: 20
+        // backgroundColor: '#000022',
+        minHeight: '15%',
+        padding: 10
     },
     headerText: {
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
         fontSize: 20,
-        color: '#fff',
+        // color: '#fff',
         marginHorizontal: 20,
         textTransform: 'capitalize'
     },

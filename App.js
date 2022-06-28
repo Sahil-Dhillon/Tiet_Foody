@@ -4,7 +4,7 @@ import AppStack from './AppStack';
 import 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import store from './store/store';
-const THEME_COLOR = '#000022'
+const THEME_COLOR = '#eaffd3'
 const AppStatusBar = ({ backgroundColor, ...props }) => {
   return (
     <View style={[styles.statusbar, backgroundColor]}>
@@ -15,7 +15,7 @@ const AppStatusBar = ({ backgroundColor, ...props }) => {
 export default function App() {
   return (
     <Provider store={store}>
-      <AppStatusBar backgroundColor={THEME_COLOR} barStyle="light-content" />
+      <AppStatusBar backgroundColor={THEME_COLOR} barStyle="dark-content" />
       <AppStack />
     </Provider>
   );

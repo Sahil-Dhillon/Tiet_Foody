@@ -47,7 +47,7 @@ export default function Login() {
     return (
         <View style={styles.container}>
             <Text style={styles.heading}>
-                Welcome to Genieverse
+                Tiet Foody
             </Text>
             {
                 create ? (
@@ -58,7 +58,7 @@ export default function Login() {
                             <TextInput style={styles.textInput} placeholder="Password" onChangeText={setPassword} value={password} secureTextEntry={true} />
                             <TextInput style={styles.textInput} placeholder="Confirm Password" onChangeText={setCpassword} value={cpassword} secureTextEntry={true} />
                             <Text>{validateError}</Text>
-                            <Button title="Sign Up" onPress={() => signUp()} />
+                            <Button title="Sign Up" color='orange' onPress={() => signUp()} />
                         </View>
                         <Text style={styles.signUpText} onPress={() => setCreate(false)}>
                             Already have an account? SignIn Instead
@@ -70,7 +70,7 @@ export default function Login() {
                             <TextInput style={styles.textInput} placeholder="Email" onChangeText={setEmail} value={email} />
                             <TextInput style={styles.textInput} placeholder="Password" onChangeText={setPassword} value={password} secureTextEntry={true} />
 
-                            <Button title="Sign In" onPress={() => signIn()} />
+                            <Button title="Sign In" color='orange' onPress={() => signIn()} />
                         </View>
                         <Text style={styles.signUpText} onPress={() => setCreate(true)}>
                             New to Geenieverse? SignUp Instead
@@ -87,20 +87,22 @@ const styles = StyleSheet.create({
         flex: 1,
         // alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#000022',
+        backgroundColor: '#eaffd3',
         padding: 20
     },
     heading: {
-        color: '#fff',
+        // color: '#fff',
         fontSize: 60,
+        textAlign: 'center',
+        fontWeight: '200',
         marginVertical: 30,
         // lineHeight: 50,
-        fontFamily: 'Roboto'
+        // fontFamily: 'Roboto'
 
     },
     formContainer: {
         width: '100%',
-        backgroundColor: '#eee',
+        backgroundColor: '#fff',
         padding: 20,
         justifyContent: 'center',
         borderRadius: 20,
@@ -113,11 +115,11 @@ const styles = StyleSheet.create({
         padding: 10,
         // margin: 20,
         marginBottom: 10,
-        backgroundColor: '#fff',
+        backgroundColor: '#f9f9f9',
     },
     signUpText: {
-        color: '#ddd',
+        // color: '#ddd',
         fontSize: 15,
-        margin: 20
+        margin: 20,
     }
 })
