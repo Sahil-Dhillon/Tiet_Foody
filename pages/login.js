@@ -73,7 +73,7 @@ export default function Login() {
                             <Button title="Sign In" color='orange' onPress={() => signIn()} />
                         </View>
                         <Text style={styles.signUpText} onPress={() => setCreate(true)}>
-                            New to Geenieverse? SignUp Instead
+                            New here? SignUp Instead
                         </Text>
                     </>
                 )

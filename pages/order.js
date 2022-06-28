@@ -5,12 +5,13 @@ import shopData from '../data/shopData'
 const Order = ({ route, navigation }) => {
     const shop = shopData.find((x) => x.name == route.params.shop)
     const item = shop.menu.find(x => x._id == route.params.item)
+    const [cartItems, setCartItems] = useState([item])
     useEffect(() => {
         shop.menu.forEach(x => x.quantity = 0)
         item.quantity = 1
+        setCartItems([item])
     }, [])
     const [amount, setAmount] = useState(item.price)
-    const [cartItems, setCartItems] = useState([item])
     const [address, setAddress] = useState('')
     var total_items = 1
     var temp = 0
