@@ -26,6 +26,10 @@ const About = () => {
                 <Text>Siddhi Aggarwal</Text>
                 <Text>102003359</Text>
             </View>
+            <View style={{ backgroundColor: '#fff', margin: 10, padding: 8, marginBottom: 0, flexDirection: 'row', justifyContent: 'space-between' }}>
+                <Text>Nupur Tyagi</Text>
+                <Text>102003343</Text>
+            </View>
         </View>
     )
 }
